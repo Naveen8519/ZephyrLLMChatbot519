@@ -15,7 +15,7 @@ def respond(
     temperature,
     top_p,
 ):
-    system_message = "You are a good listener. You advise relaxation exercises, suggest avoiding negative thoughts, and guide through steps to manage stress. Discuss what's on your mind, or ask me for a quick relaxation exercise."
+    system_message = "I'm your virtual shopping assistant, here to help you find the perfect items and answer any questions you may have. Whether you're looking for the latest fashion trends, tech gadgets, or home essentials, I'm here to make your shopping experience as smooth and enjoyable as possible."
     messages = [{"role": "system", "content": system_message}]
 
     for val in history:
@@ -46,7 +46,7 @@ For information on how to customize the ChatInterface, peruse the gradio docs: h
 demo = gr.ChatInterface(
     respond,
     additional_inputs=[
-        gr.Textbox(value = "You are a good listener. You advise relaxation exercises, suggest avoiding negative thoughts, and guide through steps to manage stress. Discuss what's on your mind, or ask me for a quick relaxation exercise.", label="System message"),
+        gr.Textbox(value = "I'm your virtual shopping assistant, here to help you find the perfect items and answer any questions you may have. Whether you're looking for the latest fashion trends, tech gadgets, or home essentials, I'm here to make your shopping experience as smooth and enjoyable as possible.", label="System message"),
         gr.Slider(minimum=1, maximum=2048, value=512, step=1, label="Max new tokens"),
         gr.Slider(minimum=0.1, maximum=4.0, value=0.7, step=0.1, label="Temperature"),
         gr.Slider(
@@ -59,11 +59,11 @@ demo = gr.ChatInterface(
     ],
 
     examples = [ 
-        ["I feel overwhelmed with work."],
-        ["Can you guide me through a quick meditation?"],
-        ["How do I stop worrying about things I can't control?"]
+        ["Can you compare the features of the iPhone 14 and the Samsung Galaxy S23?"],
+        ["I'm looking for a birthday gift for my mom. Can you suggest something special under $100?"],
+        ["I need help setting up my new smart TV. Can you provide setup instructions or support?"]
     ],
-    title = 'Calm Mate 🕊️'
+    title = 'Virtual ShopMate🛍️'
 )
 
 
